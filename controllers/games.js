@@ -1,8 +1,9 @@
-const Game = require('../models/games')
+const Game = require('../models/games');
 
 module.exports = {
     index,
-    new: newGame
+    new: newGame,
+    create
 }
 
 async function index(req,res,next){
@@ -13,4 +14,16 @@ async function index(req,res,next){
 
 function newGame(req,res){
     res.render('games/new',{title: 'New Game', errorMsg:''})
+}
+
+async function create(req, res) {
+    const gameData = { ...req.body };
+
+    try {
+        const createdGame = await Game.create(gameData);
+        res.redirect("/games/" + createdGame._id, { title: 'Created ' + createdGame.title});
+    } catch (err) {
+        console.log(err);
+        res.render("games/new", { title: 'New Game', errorMsg: err.message });
+    }
 }

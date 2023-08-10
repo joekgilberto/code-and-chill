@@ -5,6 +5,8 @@ const gamesCtrl = require('../controllers/games')
 /* GET users listing. */
 router.get('/', gamesCtrl.index);
 
-router.get('/new',gamesCtrl.new)
+router.get('/new',gamesCtrl.new);
+
+router.post('/', gamesCtrl.create);
 
 module.exports = router;

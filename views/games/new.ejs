@@ -2,15 +2,15 @@
   <form method="POST" action="/games">
     <label>Title:
         <input type="text" name="title" required>
-    </label>
+    </label><br />
     
     <label>Studio:
         <input type="text" name="studio" required>
-    </label>
+    </label><br />
     
     <label>Release Year:
         <input type="date" name="releaseYear" required>
-    </label>
+    </label><br />
 
     <label>Edition:
         <select name="edition" required>
@@ -18,7 +18,7 @@
             <option value="deluxe">Deluxe</option>
             <option value="collectors">Collectors</option>
         </select>
-    </label>
+    </label><br />
 
     <label>ESRB Rating:
         <select name="rating" required>
@@ -29,8 +29,8 @@
             <option value="a">A</option>
             <option value="rp">RP</option>
         </select>
-    </label>
+    </label><br />
 
-    <button type="submit"></button>
+    <button type="submit">Add Game</button>
   </form>
 <%- include('../partials/footer.ejs') %>
