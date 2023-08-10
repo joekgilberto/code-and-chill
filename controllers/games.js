@@ -1,6 +1,6 @@
 const Game = require('../models/games')
 
-modules.export = {
+module.exports = {
     index,
     new: newGame
 }
@@ -8,9 +8,9 @@ modules.export = {
 async function index(req,res,next){
     const results = await Game.find({})
     console.log(results)
-    res.render('index',{title: 'All Games', games: results})
+    res.render('games/index',{title: 'All Games', games: results})
 }
 
 function newGame(req,res){
-    res.render('new',{title: 'New Game', errorMsg:''})
+    res.render('games/new',{title: 'New Game', errorMsg:''})
 }
