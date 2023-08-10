@@ -10,14 +10,14 @@ module.exports = {
     update
 }
 
-async function index(req,res,next){
+async function index(req, res, next) {
     const results = await Game.find({})
-    console.log(results)
-    res.render('games/index',{title: 'All Games', games: results})
+    // console.log(results)
+    res.render('games/index', { title: 'All Games', games: results })
 }
 
-function newGame(req,res){
-    res.render('games/new',{title: 'New Game', errorMsg:''})
+function newGame(req, res) {
+    res.render('games/new', { title: 'New Game', errorMsg: '' })
 }
 
 async function create(req, res) {
@@ -35,7 +35,7 @@ async function create(req, res) {
 async function show(req, res, next) {
     try {
         const game = await Game.findById(req.params.id);
-        console.log(game);
+        // console.log(game);
 
         res.render("games/show", {
             title: "Game Detail",
@@ -47,32 +47,35 @@ async function show(req, res, next) {
     }
 }
 
-async function deleteOne(req,res,next){
-    Game.findById(req.params.id).then(function(g){
-        Game.deleteOne({_id: g._id}).then(function(){
+async function deleteOne(req, res, next) {
+    Game.findById(req.params.id).then(function (g) {
+        Game.deleteOne({ _id: g._id }).then(function () {
             res.redirect(`/games`)
         })
+            .catch(function (err) {
+                console.log(err)
+            })
+    })
         .catch(function (err) {
             console.log(err)
         })
-    })
-    .catch(function (err) {
-        console.log(err)
-    })
 }
 
-async function edit(req,res,next){
+async function edit(req, res, next) {
     const results = await Game.findById(req.params.id)
-    console.log(results)
-    res.render('games/edit',{title: 'Edit Games', game: results})
+    // console.log(results)
+    res.render('games/edit', { title: 'Edit Games', game: results })
 }
 
-async function update(req,res,next){
-    const editedData = {...req.body}
-    Game.findById(req.params.id).then(function(g){
-        g.updateOne({title: editedData.title},{studio: editedData.studio},{releaseYear: editedData.releaseYear},{edition: editedData.edition},{rating: editedData.rating})
-    })
-    .catch(function (err) {
-        console.log(err)
-    })
+async function update(req, res, next) {
+    try {
+		const updatedGame = await Game.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{new: true}
+			)
+		res.redirect(`/games/${updatedGame._id}`)
+	} catch(err) {
+		next(err)
+	}
 }
