@@ -1,27 +1,27 @@
 <%- include('../partials/header.ejs') %>
   <form method="POST" action="/games">
-    <label>Title
-        <input type="text" name="title">
+    <label>Title:
+        <input type="text" name="title" required>
     </label>
     
-    <label>Studio
-        <input type="text" name="studio">
+    <label>Studio:
+        <input type="text" name="studio" required>
     </label>
     
-    <label>Release Year
-        <input type="number" name="year">
+    <label>Release Year:
+        <input type="date" name="releaseYear" required>
     </label>
 
-    <label>
-        <select name="edition">
-            <option value="standard" selected="selected">Standard Edition</option>
-            <option value="deluxe">Deluxe Edition</option>
-            <option value="collectors">Collectors Edition</option>
+    <label>Edition:
+        <select name="edition" required>
+            <option value="standard" selected="selected">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="collectors">Collectors</option>
         </select>
     </label>
 
-    <label>ESRB Rating
-        <select name="rating">
+    <label>ESRB Rating:
+        <select name="rating" required>
             <option value="e">E</option>
             <option value="e10">E10</option>
             <option value="t">T</option>
