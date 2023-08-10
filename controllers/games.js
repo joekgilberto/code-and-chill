@@ -7,7 +7,7 @@ module.exports = {
     show,
     delete: deleteOne,
     edit,
-    // update
+    update
 }
 
 async function index(req,res,next){
@@ -65,4 +65,14 @@ async function edit(req,res,next){
     const results = await Game.findById(req.params.id)
     console.log(results)
     res.render('games/edit',{title: 'Edit Games', game: results})
+}
+
+async function update(req,res,next){
+    const editedData = {...req.body}
+    Game.findById(req.params.id).then(function(g){
+        g.updateOne({title: editedData.title},{studio: editedData.studio},{releaseYear: editedData.releaseYear},{edition: editedData.edition},{rating: editedData.rating})
+    })
+    .catch(function (err) {
+        console.log(err)
+    })
 }

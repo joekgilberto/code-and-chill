@@ -13,7 +13,7 @@ router.get('/:id', gamesCtrl.show);
 
 router.get('/:id/edit', gamesCtrl.edit)
 
-// router.put('/:id', gamesCtrl.update);
+router.put('/:id', gamesCtrl.update);
 
 router.delete('/:id', gamesCtrl.delete)
 
