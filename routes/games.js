@@ -9,4 +9,6 @@ router.get('/new',gamesCtrl.new);
 
 router.post('/', gamesCtrl.create);
 
+router. get('/:id', gamesCtrl.show);
+
 module.exports = router;

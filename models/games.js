@@ -14,20 +14,25 @@ const gameSchema = new Schema({
     },
     releaseYear: {
         type: Date,
+        default: function () {
+            return new Date().getFullYear();
+        },
         required: true,
     },
     edition: {
         type: String,
-        enum: ['standard', 'deluxe', 'collectors'],
+        enum: ["standard", "deluxe", "collectors"],
         required: true,
     },
     rating: {
         type: String,
-        enum: ['e', 'e10', 't', 'm', 'a', 'rp'],
+        enum: ["E", "E10", "T", "M", "A", "RP"],
         required: true,
     },
-
-    
-});
+},
+    {
+        timestamps: true,
+    },
+);
 
 module.exports = mongoose.model("Game", gameSchema);

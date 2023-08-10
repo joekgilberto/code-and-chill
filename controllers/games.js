@@ -3,7 +3,8 @@ const Game = require('../models/games');
 module.exports = {
     index,
     new: newGame,
-    create
+    create,
+    show,
 }
 
 async function index(req,res,next){
@@ -25,5 +26,20 @@ async function create(req, res) {
     } catch (err) {
         console.log(err);
         res.render("games/new", { title: 'New Game', errorMsg: err.message });
+    }
+}
+
+async function show(req, res, next) {
+    try {
+        const game = await Game.findById(req.params.id);
+        console.log(game);
+
+        res.render("games/show", {
+            title: "Game Detail",
+            game,
+        });
+    } catch (err) {
+        console.log(err);
+        next(Error(err));
     }
 }

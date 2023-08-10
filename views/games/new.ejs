@@ -1,16 +1,16 @@
 <%- include('../partials/header.ejs') %>
-  <form method="POST" action="/games">
+  <form action="/games" method="POST">
     <label>Title:
         <input type="text" name="title" required>
-    </label><br />
+    </label>
     
     <label>Studio:
         <input type="text" name="studio" required>
-    </label><br />
+    </label>
     
     <label>Release Year:
         <input type="date" name="releaseYear" required>
-    </label><br />
+    </label>
 
     <label>Edition:
         <select name="edition" required>
@@ -18,18 +18,18 @@
             <option value="deluxe">Deluxe</option>
             <option value="collectors">Collectors</option>
         </select>
-    </label><br />
+    </label>
 
     <label>ESRB Rating:
         <select name="rating" required>
-            <option value="e">E</option>
-            <option value="e10">E10</option>
-            <option value="t">T</option>
-            <option value="m">M</option>
-            <option value="a">A</option>
-            <option value="rp">RP</option>
+            <option value="E">E</option>
+            <option value="E10">E10</option>
+            <option value="T">T</option>
+            <option value="M">M</option>
+            <option value="A">A</option>
+            <option value="RP">RP</option>
         </select>
-    </label><br />
+    </label>
 
     <button type="submit">Add Game</button>
   </form>
