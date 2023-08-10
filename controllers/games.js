@@ -22,10 +22,10 @@ async function create(req, res) {
 
     try {
         const createdGame = await Game.create(gameData);
-        res.redirect("/games/" + createdGame._id, { title: 'Created ' + createdGame.title});
+        res.redirect("/games/" + createdGame._id);
     } catch (err) {
         console.log(err);
-        res.render("games/new", { title: 'New Game', errorMsg: err.message });
+        res.render("games/new", { errorMsg: err.message });
     }
 }
 

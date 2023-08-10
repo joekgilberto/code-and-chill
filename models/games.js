@@ -21,7 +21,7 @@ const gameSchema = new Schema({
     },
     edition: {
         type: String,
-        enum: ["standard", "deluxe", "collectors"],
+        enum: ["Standard", "Deluxe", "Collectors"],
         required: true,
     },
     rating: {
