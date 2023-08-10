@@ -3,8 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+a, button {
   color: #00B7FF;
+}
+
+button{
+  border: none;
 }
 
 header{
@@ -47,7 +51,7 @@ table td {
   min-width: 100px;
 }
 
-#list a {
+#list a, #list button {
   border-radius: 4px;
   background-color: #B8C0C2;
   padding: 4px;

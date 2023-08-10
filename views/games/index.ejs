@@ -9,7 +9,8 @@
         <th>Release<br>Year</th>
         <th>Edition</th>
         <th>ESRB<br>Rating</th>
-        <th></th>
+        <th>Details</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,9 @@
           <td><%= g.edition %></td>
           <td><%= g.rating %></td>
           <td><a href="/games/<%= g._id %>">DETAILS</a></td>
+          <td><form method="POST" action="/games/<%= g._id %>?_method=DELETE">
+            <button type="submit">DELETE</button>
+          </form></td>
         </tr>
         <% }); %>
       </tbody>
