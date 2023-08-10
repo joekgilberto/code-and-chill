@@ -11,6 +11,12 @@
   <div><%= game.edition %></div>
   <div>Rating:</div>
   <div><%= game.rating %></div>
+  <div>Delete:</div>
+  <div>
+  <form method="POST" action="/games/<%= game._id %>?_method=DELETE">
+    <button class="delete" type="submit">Delete</button>
+  </form>
+</div>
 </section>
 
 <%- include('../partials/footer') %>

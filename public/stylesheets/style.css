@@ -7,6 +7,10 @@ a, button {
   color: #00B7FF;
 }
 
+button.delete {
+  color: red;
+}
+
 button{
   border: none;
 }

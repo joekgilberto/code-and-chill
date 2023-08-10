@@ -23,7 +23,7 @@
           <td><%= g.rating %></td>
           <td><a href="/games/<%= g._id %>">DETAILS</a></td>
           <td><form method="POST" action="/games/<%= g._id %>?_method=DELETE">
-            <button type="submit">DELETE</button>
+            <button class="delete" type="submit">DELETE</button>
           </form></td>
         </tr>
         <% }); %>
