@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+  <form method="POST" action="/games">
+    <label>Title
+        <input type="text" name="title">
+    </label>
+    
+    <label>Studio
+        <input type="text" name="studio">
+    </label>
+    
+    <label>Release Year
+        <input type="number" name="year">
+    </label>
+
+    <label>
+        <select name="edition">
+            <option value="standard" selected="selected">Standard Edition</option>
+            <option value="deluxe">Deluxe Edition</option>
+            <option value="collectors">Collectors Edition</option>
+        </select>
+    </label>
+
+    <label>ESRB Rating
+        <select name="rating">
+            <option value="e">E</option>
+            <option value="e10">E10</option>
+            <option value="t">T</option>
+            <option value="m">M</option>
+            <option value="a">A</option>
+            <option value="rp">RP</option>
+        </select>
+    </label>
+
+    <button type="submit"></button>
+  </form>
+<%- include('../partials/footer.ejs') %>
