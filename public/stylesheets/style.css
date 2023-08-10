@@ -19,11 +19,6 @@ button {
   border: none;
 }
 
-button:hover {
-  border: none;
-  background-color: white;
-}
-
 header{
   width: 100%;
   position: fixed;
@@ -72,6 +67,10 @@ table td {
   font-size: 14px;
 }
 
+#list a:hover, #list button:hover {
+  background-color: white;
+}
+
 #list a:hover {
   background-color: white;
 }
@@ -88,5 +87,4 @@ table td {
 
 .delete:hover {
   cursor: pointer;
-  background-color: white;
 }
