@@ -46,5 +46,15 @@ async function show(req, res, next) {
 }
 
 async function deleteOne(req,res,next){
-    // Game.findById
+    Game.findById(req.params.id).then(function(g){
+        Game.deleteOne({_id: g._id}).then(function(){
+            res.redirect(`/games`)
+        })
+        .catch(function (err) {
+            console.log(err)
+        })
+    })
+    .catch(function (err) {
+        console.log(err)
+    })
 }
