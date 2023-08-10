@@ -11,8 +11,17 @@ button.delete {
   color: red;
 }
 
-button{
+button.delete:hover {
+  background-color: white;
+}
+
+button {
   border: none;
+}
+
+button:hover {
+  border: none;
+  background-color: white;
 }
 
 header{
@@ -75,4 +84,9 @@ table td {
 
 #show-page div:nth-child(even) {
   font-weight: bold;
+}
+
+.delete:hover {
+  cursor: pointer;
+  background-color: white;
 }
