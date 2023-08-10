@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+  <form action="/games" method="POST">
+    <label>Title:
+        <input type="text" name="title" value="<%=game.title%>" required>
+    </label>
+    
+    <label>Studio:
+        <input type="text" name="studio" value="<%=game.studio%>" required>
+    </label>
+    
+    <label>Release Year:
+        <input type="date" name="releaseYear" value="<%=game.releaseYear.getFullYear()%>-<%=game.releaseYear.getMonth()%>-<%=game.releaseYear.getDate()%>" required>
+    </label>
+
+    <label>Edition:
+        <select name="edition" value="<%=game.edition%>" required>
+            <option value="Standard" selected="selected">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Collectors">Collectors</option>
+        </select>
+    </label>
+
+    <label>ESRB Rating:
+        <select name="rating" value="<%=game.rating%>" required>
+            <option value="E">E</option>
+            <option value="E10">E10</option>
+            <option value="T">T</option>
+            <option value="M">M</option>
+            <option value="A">A</option>
+            <option value="RP">RP</option>
+        </select>
+    </label>
+
+    <button type="submit">Update Game</button>
+  </form>
+<%- include('../partials/footer.ejs') %>

@@ -11,6 +11,10 @@
   <div><%= game.edition %></div>
   <div>Rating:</div>
   <div><%= game.rating %></div>
+  <div>Edit:</div>
+  <div>
+    <a href="/games/<%= game._id %>/edit">Edit</a>
+  </div>
   <div>Delete:</div>
   <div>
   <form method="POST" action="/games/<%= game._id %>?_method=DELETE">

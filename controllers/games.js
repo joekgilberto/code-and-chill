@@ -5,7 +5,9 @@ module.exports = {
     new: newGame,
     create,
     show,
-    delete: deleteOne
+    delete: deleteOne,
+    edit,
+    // update
 }
 
 async function index(req,res,next){
@@ -57,4 +59,10 @@ async function deleteOne(req,res,next){
     .catch(function (err) {
         console.log(err)
     })
+}
+
+async function edit(req,res,next){
+    const results = await Game.findById(req.params.id)
+    console.log(results)
+    res.render('games/edit',{title: 'Edit Games', game: results})
 }
