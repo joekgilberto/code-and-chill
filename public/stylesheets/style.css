@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 55px;
+}
+
+main {
+  margin-top: 100px;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
